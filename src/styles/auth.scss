@@ -1,0 +1,33 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 320px;
+  background: #fff;
+  margin-top: 100px;
+
+  &-title {
+    font-size: 15px;
+    margin: 20px 10px;
+    text-align: center;
+  }
+
+  &-error {
+    margin: 20px 0;
+  }
+
+  &-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mat-mdc-form-field {
+    width: 100%;
+  }
+}

@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  ng-kks:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      - URLPETUHA=url
+      - PASSPETUHA=pass
+    ports:
+      - 80:80
