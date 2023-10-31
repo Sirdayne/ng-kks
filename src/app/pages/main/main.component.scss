@@ -1,0 +1,14 @@
+.main {
+
+  &-container {
+    display: flex;
+  }
+
+  &-content {
+    width: 100%;
+    background: #fff;
+    padding: 15px 20px;
+    margin: 10px 20px;
+    box-sizing: border-box;
+  }
+}

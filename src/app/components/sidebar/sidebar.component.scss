@@ -1,0 +1,35 @@
+.sidebar {
+  width: 200px;
+  border-right: rgb(107, 107, 107);
+  min-height: 400px;
+
+  &-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: 17px;
+    padding: 15px 30px;
+    transition: .1s ease-in;
+    border-bottom: rgb(107, 107, 107);
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 2px;
+    margin: 10px 0 0;
+    color: rgba(21, 21, 63, 0.87);
+
+    &__label {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      background: rgba(23, 23, 24, 0.11);
+      color: #000000de
+    }
+
+    &.active {
+      background: var(--primary-color);
+      color: #fff;
+    }
+  }
+}

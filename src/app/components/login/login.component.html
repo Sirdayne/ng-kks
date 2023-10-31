@@ -5,7 +5,7 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field>
-          <mat-label>Введите E-mail</mat-label>
+          <mat-label>E-mail</mat-label>
           <input matInput formControlName="email">
           <mat-error *ngIf="form.get('email').invalid && submitted">
             Введите email
@@ -15,7 +15,7 @@
 
       <div>
         <mat-form-field>
-          <mat-label>Введите пароль</mat-label>
+          <mat-label>Пароль</mat-label>
           <input matInput formControlName="password" type="password">
           <mat-error *ngIf="form.get('password').invalid && submitted">
             Введите пароль

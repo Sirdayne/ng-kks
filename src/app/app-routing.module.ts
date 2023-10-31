@@ -17,6 +17,10 @@ const route: Routes = [
         component: MainFormComponent
       },
       {
+        path: 'form',
+        component: MainFormComponent
+      },
+      {
         path: 'download',
         component: DownloadComponent
       }

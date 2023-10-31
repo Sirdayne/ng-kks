@@ -1,4 +1,16 @@
 <div class="sidebar">
-  sidebar
+  <div class="sidebar-link" [routerLink]="'/'" routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: true}">
+    <mat-icon fontIcon="home"></mat-icon>
+    <span class="sidebar-link__label">Главная</span>
+  </div>
+  <div class="sidebar-link" [routerLink]="'/form'" routerLinkActive="active">
+    <mat-icon fontIcon="description"></mat-icon>
+    <span class="sidebar-link__label">Форма</span>
+  </div>
+  <div class="sidebar-link" [routerLink]="'/download'" routerLinkActive="active">
+    <mat-icon fontIcon="download"></mat-icon>
+    <span class="sidebar-link__label">Выгрузка</span>
+  </div>
 </div>
 

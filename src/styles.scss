@@ -1,7 +1,8 @@
 html { height: 100%; background: #f1f1f1; }
 body { margin: 0; height: 100%; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+@import 'styles/var.scss';
 @import 'styles/auth.scss';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Lucida Sans Unicode; }
+body { margin: 0; font-family: Roboto, sans-serif; }
