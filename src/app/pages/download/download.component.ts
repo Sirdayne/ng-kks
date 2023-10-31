@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-main-form',
-  templateUrl: './main-form.component.html',
-  styleUrls: ['./main-form.component.css']
+  selector: 'app-download',
+  templateUrl: './download.component.html',
+  styleUrls: ['./download.component.css']
 })
-export class MainFormComponent {
+export class DownloadComponent {
 
 }

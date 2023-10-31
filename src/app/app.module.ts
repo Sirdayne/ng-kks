@@ -10,6 +10,10 @@ import { AuthComponent } from './components/auth/auth.component';
 import { HttpTokenInterceptor } from './core/interceptors/http.token.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MainComponent } from './pages/main/main.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { MainFormComponent } from './pages/main-form/main-form.component';
+import { DownloadComponent } from './pages/download/download.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { MainComponent } from './pages/main/main.component';
     LoginComponent,
     RegisterComponent,
     AuthComponent,
-    MainComponent
+    SidebarComponent,
+    NavigationComponent,
+    MainComponent,
+    MainFormComponent,
+    DownloadComponent
   ],
   imports: [
     BrowserModule,

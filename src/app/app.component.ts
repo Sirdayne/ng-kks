@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { TokenService } from './components/token.service';
 import { AuthService } from './components/auth.service';
 
