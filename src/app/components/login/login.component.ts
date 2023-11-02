@@ -4,6 +4,7 @@ import { finalize } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../auth.service';
 import { TokenService } from '../token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent {
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               private tokenService: TokenService,
-              private snackBar: MatSnackBar) {
+              private snackBar: MatSnackBar,
+              private router: Router) {
     this.form = fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
@@ -48,5 +50,7 @@ export class LoginComponent {
     }, (err) => {
       this.authError = err && err.error && err.error.message ? err.error.message : "Неверные email или пароль";
     });
+
+    this.router.navigateByUrl('/admin');
   }
 }

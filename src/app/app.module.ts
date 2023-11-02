@@ -14,6 +14,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { MainFormComponent } from './pages/main-form/main-form.component';
 import { DownloadComponent } from './pages/download/download.component';
+import { GeneralFormComponent } from './components/general-form/general-form.component';
+import { TableComponent } from './pages/table/table.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { DownloadComponent } from './pages/download/download.component';
     NavigationComponent,
     MainComponent,
     MainFormComponent,
-    DownloadComponent
+    DownloadComponent,
+    GeneralFormComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

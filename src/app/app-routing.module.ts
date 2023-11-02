@@ -5,24 +5,30 @@ import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './pages/main/main.component';
 import { MainFormComponent } from './pages/main-form/main-form.component';
 import { DownloadComponent } from './pages/download/download.component';
+import { GeneralFormComponent } from './components/general-form/general-form.component';
+import { TableComponent } from './pages/table/table.component';
 
 const route: Routes = [
   {
     path: '',
+    component: MainFormComponent
+  },
+  {
+    path: 'admin',
     // canActivate: [AuthGuard],
     component: MainComponent,
     children: [
       {
         path: '',
-        component: MainFormComponent
+        component: GeneralFormComponent
       },
       {
         path: 'form',
-        component: MainFormComponent
+        component: GeneralFormComponent
       },
       {
-        path: 'download',
-        component: DownloadComponent
+        path: 'table',
+        component: TableComponent
       }
     ]
   },

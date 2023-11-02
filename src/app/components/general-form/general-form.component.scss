@@ -1,0 +1,18 @@
+.general-form {
+  padding: 20px;
+  background: #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+  min-width: 320px;
+
+  .general-form__title {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+
+  .general-form__row {
+    display: flex;
+    justify-content: center;
+  }
+}

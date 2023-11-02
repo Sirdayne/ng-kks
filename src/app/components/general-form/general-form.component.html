@@ -1,0 +1,27 @@
+<div class="general-form">
+  <form [formGroup]="form" #formDirective="ngForm" (ngSubmit)="submitForm()">
+    <div class="general-form__title">Создать заявку</div>
+
+    <div class="general-form__row">
+      <mat-form-field>
+        <mat-label>ФИО</mat-label>
+        <input matInput required
+               formControlName="name">
+      </mat-form-field>
+    </div>
+
+    <div class="general-form__row">
+      <mat-form-field>
+        <mat-label>Текст Заявки</mat-label>
+        <textarea matInput required
+                  formControlName="text"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="general-form__row">
+      <button color="primary" mat-raised-button type="submit"
+              [disabled]="!form.valid">Отправить</button>
+    </div>
+  </form>
+</div>
+
