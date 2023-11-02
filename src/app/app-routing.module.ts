@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { LoginComponent } from './components/login/login.component';
-import { MainComponent } from './pages/main/main.component';
+import { AdminComponent } from './pages/admin/admin.component';
 import { MainFormComponent } from './pages/main-form/main-form.component';
 import { DownloadComponent } from './pages/download/download.component';
 import { GeneralFormComponent } from './components/general-form/general-form.component';
@@ -16,7 +16,7 @@ const route: Routes = [
   {
     path: 'admin',
     // canActivate: [AuthGuard],
-    component: MainComponent,
+    component: AdminComponent,
     children: [
       {
         path: '',
