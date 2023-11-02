@@ -16,6 +16,7 @@ import { MainFormComponent } from './pages/main-form/main-form.component';
 import { DownloadComponent } from './pages/download/download.component';
 import { GeneralFormComponent } from './components/general-form/general-form.component';
 import { TableComponent } from './pages/table/table.component';
+import { DialogEditFormComponent } from './components/dialog-edit-form/dialog-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TableComponent } from './pages/table/table.component';
     MainFormComponent,
     DownloadComponent,
     GeneralFormComponent,
-    TableComponent
+    TableComponent,
+    DialogEditFormComponent
   ],
   imports: [
     BrowserModule,

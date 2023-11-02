@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TableService } from './table.service';
 import { ImportService } from '../../components/import.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogEditFormComponent } from '../../components/dialog-edit-form/dialog-edit-form.component';
 
 @Component({
   selector: 'app-table',
@@ -11,7 +13,8 @@ import { ImportService } from '../../components/import.service';
 export class TableComponent {
 
   constructor(private tableService: TableService,
-              private importService: ImportService) {
+              private importService: ImportService,
+              private dialog: MatDialog) {
     this.fetchTableData();
   }
 
@@ -33,6 +36,22 @@ export class TableComponent {
     console.log(id);
     this.tableService.downloadPDF(id).subscribe(res => {
       this.importService.saveFile(`Заявка_${id}`, res, 'pdf');
+    });
+  }
+
+  editForm(item) {
+    console.log(item);
+
+    const dialogRef = this.dialog.open(DialogEditFormComponent, {
+      data: {
+        item
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((value) => {
+      if (value) {
+        console.log('closed re-fetch data')
+      };
     });
   }
 }

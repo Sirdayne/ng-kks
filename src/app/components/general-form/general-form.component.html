@@ -1,6 +1,6 @@
 <div class="general-form">
   <form [formGroup]="form" #formDirective="ngForm" (ngSubmit)="submitForm()">
-    <div class="general-form__title">Создать заявку</div>
+    <div class="general-form__title">{{ title }}</div>
 
     <div class="general-form__row">
       <mat-form-field>
@@ -13,7 +13,7 @@
     <div class="general-form__row">
       <mat-form-field>
         <mat-label>Текст Заявки</mat-label>
-        <textarea matInput required
+        <textarea class="general-form__row__textarea" matInput required
                   formControlName="text"></textarea>
       </mat-form-field>
     </div>

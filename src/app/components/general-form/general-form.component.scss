@@ -3,7 +3,7 @@
   background: #fff;
   border-radius: 2px;
   box-sizing: border-box;
-  min-width: 320px;
+  min-width: 520px;
 
   .general-form__title {
     text-align: center;
@@ -14,5 +14,9 @@
   .general-form__row {
     display: flex;
     justify-content: center;
+
+    &__textarea {
+      height: 100px;
+    }
   }
 }

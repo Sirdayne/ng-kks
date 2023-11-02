@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -8,7 +8,10 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './general-form.component.html',
   styleUrls: ['./general-form.component.scss']
 })
-export class GeneralFormComponent {
+export class GeneralFormComponent implements OnInit {
+  @Input() title = 'Создать заявку'
+  @Input() formData;
+  @Output() closeDialog = new EventEmitter();
 
   @ViewChild('formDirective', { static: true }) private formDirective: NgForm;
   form: FormGroup;
@@ -25,7 +28,25 @@ export class GeneralFormComponent {
     });
   }
 
+  ngOnInit() {
+    if (this.isEdit) {
+      this.setFormData();
+    }
+  }
+
+  setFormData() {
+    this.form.patchValue(this.formData);
+  }
+
   submitForm() {
     console.log(this.form.getRawValue(), ' FORM SUBMITTED');
+
+    if (this.isEdit) {
+      this.closeDialog.emit(true);
+    }
+  }
+
+  get isEdit() {
+    return this.formData && this.formData.id;
   }
 }
