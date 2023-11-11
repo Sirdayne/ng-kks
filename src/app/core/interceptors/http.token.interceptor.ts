@@ -5,11 +5,14 @@ import {
   HttpHandler,
   HttpRequest,
   HttpResponse,
-  HttpErrorResponse
+  HttpErrorResponse, HttpContextToken, HttpContext
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { TokenService } from '../../components/token.service';
+
+const NO_AUTH = new HttpContextToken<boolean>(() => false);
+export const NO_AUTH_CONTEXT = { context: new HttpContext().set(NO_AUTH, true) };
 
 @Injectable()
 export class HttpTokenInterceptor implements HttpInterceptor {
@@ -22,7 +25,7 @@ export class HttpTokenInterceptor implements HttpInterceptor {
     }
 
     const headersConfig = {};
-    const accessToken = this.tokenService.getToken();
+    const accessToken = req.context.get(NO_AUTH) ? null : this.tokenService.getToken();
     if (accessToken) {
       headersConfig['Authorization'] = `Basic ${accessToken}`;
     }

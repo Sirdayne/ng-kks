@@ -19,7 +19,7 @@ export class MainFormComponent {
 
   submitForm(payload) {
     console.log(payload, ' PAYLOAD')
-    this.applicationService.postApplication(payload).subscribe(res => {
+    this.applicationService.guestPostApplication(payload).subscribe(res => {
       console.log('Post APP on SUCCESS')
     }, () => {
       console.log('Post APP on ERROR')
