@@ -4,6 +4,7 @@ import { TableService } from './table.service';
 import { ImportService } from '../../components/import.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogEditFormComponent } from '../../components/dialog-edit-form/dialog-edit-form.component';
+import { ApplicationService } from '../../core/services/application.service';
 
 @Component({
   selector: 'app-table',
@@ -14,22 +15,27 @@ export class TableComponent {
 
   constructor(private tableService: TableService,
               private importService: ImportService,
-              private dialog: MatDialog) {
+              private dialog: MatDialog,
+              private applicationService: ApplicationService) {
     this.fetchTableData();
   }
 
   fetchTableData() {
-    this.tableService.getRecords().subscribe(res => {
-      console.log(res);
-    });
+    // this.tableService.getRecords().subscribe(res => {
+    //   console.log(res);
+    // });
+
+    this.applicationService.getApplications().subscribe(res => {
+      console.log('applications');
+    })
   }
 
-  displayedColumns: string[] = ['id', 'name', 'text', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'full_name', 'description', 'actions'];
   dataSource = [
-    {id: 1, name: 'Мусин Ернар', text: 'Текст заявки 1'},
-    {id: 2, name: 'Мусин Ернар', text: 'Текст заявки 2'},
-    {id: 3, name: 'Мусин Ернар', text: 'Текст заявки 3'},
-    {id: 4, name: 'Тест Тест Тестович', text: 'Текст заявки тест'},
+    {id: 1, name: 'Первая заявка', full_name: 'Мусин Ернар', description: 'Текст заявки 1'},
+    {id: 2, name: 'Вторая', full_name: 'Мусин Ернар', description: 'Текст заявки 2'},
+    {id: 3, name: 'Application N 3', full_name: 'Мусин Ернар', description: 'Текст заявки 3'},
+    {id: 4, name: 'Test заявка', full_name: 'Тест Тест Тестович', description: 'Текст заявки тест'},
   ];
 
   downloadPDF(id) {

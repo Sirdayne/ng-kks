@@ -1,15 +1,13 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { ApplicationService } from '../../core/services/application.service';
+import { ApplicationService } from '../../../core/services/application.service';
 
 @Component({
-  selector: 'app-main-form',
-  templateUrl: './main-form.component.html',
-  styleUrls: ['./main-form.component.scss']
+  selector: 'app-admin-form',
+  templateUrl: './admin-form.component.html',
+  styleUrls: ['./admin-form.component.scss']
 })
-export class MainFormComponent {
+export class AdminFormComponent {
 
   constructor(
     private router: Router,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-navigation',
@@ -8,13 +9,15 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private tokenService: TokenService) {
   }
 
   ngOnInit(): void {
   }
 
   logout() {
+    this.tokenService.removeToken();
     this.router.navigateByUrl('/login');
   }
 }

@@ -12,6 +12,7 @@ export class GeneralFormComponent implements OnInit {
   @Input() title = 'Создать заявку'
   @Input() formData;
   @Output() closeDialog = new EventEmitter();
+  @Output() emitSubmitForm = new EventEmitter();
 
   @ViewChild('formDirective', { static: true }) private formDirective: NgForm;
   form: FormGroup;
@@ -24,7 +25,8 @@ export class GeneralFormComponent implements OnInit {
   ) {
     this.form = this.fb.group({
       name: ['', [Validators.required]],
-      text: ['', [Validators.required]]
+      full_name: ['', [Validators.required]],
+      description: ['', [Validators.required]]
     });
   }
 
@@ -40,6 +42,8 @@ export class GeneralFormComponent implements OnInit {
 
   submitForm() {
     console.log(this.form.getRawValue(), ' FORM SUBMITTED');
+
+    this.emitSubmitForm.emit(this.form.getRawValue());
 
     if (this.isEdit) {
       this.closeDialog.emit(true);

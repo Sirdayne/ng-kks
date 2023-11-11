@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class TokenService {
 
-  TOKEN_LOCAL_STORAGE = 'gptc_access_token';
+  TOKEN_LOCAL_STORAGE = 'stellion_access_token';
 
   constructor() { }
 

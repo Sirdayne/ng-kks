@@ -4,7 +4,7 @@
 
     <div class="general-form__row">
       <mat-form-field>
-        <mat-label>ФИО</mat-label>
+        <mat-label>Заявка</mat-label>
         <input matInput required
                formControlName="name">
       </mat-form-field>
@@ -12,9 +12,17 @@
 
     <div class="general-form__row">
       <mat-form-field>
+        <mat-label>ФИО</mat-label>
+        <input matInput required
+               formControlName="full_name">
+      </mat-form-field>
+    </div>
+
+    <div class="general-form__row">
+      <mat-form-field>
         <mat-label>Текст Заявки</mat-label>
         <textarea class="general-form__row__textarea" matInput required
-                  formControlName="text"></textarea>
+                  formControlName="description"></textarea>
       </mat-form-field>
     </div>
 

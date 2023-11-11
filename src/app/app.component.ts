@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
-      this.validateCurrentUser();
+      // this.validateCurrentUser();
     }
   }
 
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
         this.authService.setCurrentUser(res);
       }
     }, err => {
-      this.tokenService.removeToken();
+      // this.tokenService.removeToken();
     });
   }
 }

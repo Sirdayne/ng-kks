@@ -11,6 +11,10 @@ export class AuthService {
 
   constructor(private httpService: HttpClient) { }
 
+  encodeToBase64(login, password) {
+    return btoa(login + '/' + password);
+  }
+
   validateCurrentUser() {
     return this.httpService.get('/current_user');
   }

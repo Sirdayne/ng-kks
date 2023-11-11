@@ -5,10 +5,10 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field>
-          <mat-label>E-mail</mat-label>
-          <input matInput formControlName="email">
-          <mat-error *ngIf="form.get('email').invalid && submitted">
-            Введите email
+          <mat-label>Логин</mat-label>
+          <input matInput formControlName="login">
+          <mat-error *ngIf="form.get('login').invalid && submitted">
+            Введите ваш логин
           </mat-error>
         </mat-form-field>
       </div>

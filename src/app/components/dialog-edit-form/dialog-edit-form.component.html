@@ -4,6 +4,7 @@
   </div>
   <app-general-form [title]="'Редактировать заявку'"
                     [formData]="data.item"
+                    (emitSubmitForm)="submitForm($event)"
                     (closeDialog)="closeDialog($event)"
   ></app-general-form>
 </div>

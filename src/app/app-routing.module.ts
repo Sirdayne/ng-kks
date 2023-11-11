@@ -7,6 +7,7 @@ import { MainFormComponent } from './pages/main-form/main-form.component';
 import { DownloadComponent } from './pages/download/download.component';
 import { GeneralFormComponent } from './components/general-form/general-form.component';
 import { TableComponent } from './pages/table/table.component';
+import { AdminFormComponent } from './pages/admin/admin-form/admin-form.component';
 
 const route: Routes = [
   {
@@ -15,16 +16,16 @@ const route: Routes = [
   },
   {
     path: 'admin',
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     component: AdminComponent,
     children: [
       {
         path: '',
-        component: GeneralFormComponent
+        component: AdminFormComponent
       },
       {
         path: 'form',
-        component: GeneralFormComponent
+        component: AdminFormComponent
       },
       {
         path: 'table',

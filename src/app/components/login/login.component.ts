@@ -23,7 +23,7 @@ export class LoginComponent {
               private snackBar: MatSnackBar,
               private router: Router) {
     this.form = fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      login: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
   }
@@ -32,8 +32,8 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    if (this.form.get('email').invalid) {
-      this.authError = 'Введите e-mail';
+    if (this.form.get('login').invalid) {
+      this.authError = 'Введите логин';
       return;
     }
     if (this.form.get('password').invalid) {
@@ -43,13 +43,17 @@ export class LoginComponent {
     this.submitted = true;
     this.loading = true;
     this.authError = '';
-    this.authService.login(this.form.getRawValue()).pipe(
-      finalize(() => this.loading = false)
-    ).subscribe((res: any) => {
 
-    }, (err) => {
-      this.authError = err && err.error && err.error.message ? err.error.message : "Неверные email или пароль";
-    });
+    const token = this.authService.encodeToBase64(this.form.get('login').value, this.form.get('password').value);
+    console.log(token);
+    this.tokenService.setToken(token);
+    // this.authService.login(this.form.getRawValue()).pipe(
+    //   finalize(() => this.loading = false)
+    // ).subscribe((res: any) => {
+    //
+    // }, (err) => {
+    //   this.authError = err && err.error && err.error.message ? err.error.message : "Неверные логин и пароль";
+    // });
 
     this.router.navigateByUrl('/admin');
   }

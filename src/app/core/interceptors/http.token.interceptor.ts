@@ -24,7 +24,7 @@ export class HttpTokenInterceptor implements HttpInterceptor {
     const headersConfig = {};
     const accessToken = this.tokenService.getToken();
     if (accessToken) {
-      headersConfig['x-access-token'] = accessToken;
+      headersConfig['Authorization'] = `Basic ${accessToken}`;
     }
 
     const request = req.clone({
@@ -37,7 +37,7 @@ export class HttpTokenInterceptor implements HttpInterceptor {
 
   getModifiedUrl(requestUrl): string {
     if (requestUrl && (requestUrl.includes('http://') || requestUrl.includes('https://'))) {
-      return  requestUrl;
+      return requestUrl;
     }
     return environment.apiEndpoint + requestUrl;
   }

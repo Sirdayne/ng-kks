@@ -17,6 +17,7 @@ import { DownloadComponent } from './pages/download/download.component';
 import { GeneralFormComponent } from './components/general-form/general-form.component';
 import { TableComponent } from './pages/table/table.component';
 import { DialogEditFormComponent } from './components/dialog-edit-form/dialog-edit-form.component';
+import { AdminFormComponent } from './pages/admin/admin-form/admin-form.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DialogEditFormComponent } from './components/dialog-edit-form/dialog-ed
     SidebarComponent,
     NavigationComponent,
     AdminComponent,
+    AdminFormComponent,
     MainFormComponent,
     DownloadComponent,
     GeneralFormComponent,
