@@ -6,4 +6,20 @@
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
+
+  &__label {
+    color: #2f2f2f;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+  }
+
+  &__profiles {
+    display: flex;
+  }
+  &__profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
 }

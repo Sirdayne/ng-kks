@@ -19,6 +19,7 @@ import { TableComponent } from './pages/table/table.component';
 import { DialogEditFormComponent } from './components/dialog-edit-form/dialog-edit-form.component';
 import { AdminFormComponent } from './pages/admin/admin-form/admin-form.component';
 import { ViewApplicationComponent } from "./components/view-application/view-application.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ViewApplicationComponent } from "./components/view-application/view-app
     GeneralFormComponent,
     TableComponent,
     DialogEditFormComponent,
-    ViewApplicationComponent
+    ViewApplicationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
