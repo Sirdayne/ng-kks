@@ -25,18 +25,14 @@ export class TableComponent {
     //   console.log(res);
     // });
 
-    this.applicationService.getApplications().subscribe(res => {
-      console.log('applications');
+    this.applicationService.getApplications().subscribe((res: any) => {
+      console.log(res.data, ' APPLICATIONS');
+      this.dataSource = res && res.data ? res.data: [];
     })
   }
 
   displayedColumns: string[] = ['id', 'name', 'full_name', 'description', 'actions'];
-  dataSource = [
-    {id: 1, name: 'Первая заявка', full_name: 'Мусин Ернар', description: 'Текст заявки 1'},
-    {id: 2, name: 'Вторая', full_name: 'Мусин Ернар', description: 'Текст заявки 2'},
-    {id: 3, name: 'Application N 3', full_name: 'Мусин Ернар', description: 'Текст заявки 3'},
-    {id: 4, name: 'Test заявка', full_name: 'Тест Тест Тестович', description: 'Текст заявки тест'},
-  ];
+  dataSource = [];
 
   downloadPDF(id) {
     console.log(id);
@@ -50,7 +46,7 @@ export class TableComponent {
 
     const dialogRef = this.dialog.open(DialogEditFormComponent, {
       data: {
-        item
+        application: item
       }
     });
 

@@ -1,0 +1,28 @@
+.view-application {
+  padding: 20px;
+  background: #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+  min-width: 520px;
+  min-height: 200px;
+
+  &__label {
+    margin-top: 15px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+  }
+
+  &__value {
+    margin-top: 5px;
+    color: #797979;
+    font-size: 15px;
+    white-space: pre;
+  }
+
+  &__buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

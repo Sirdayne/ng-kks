@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private httpService: HttpClient) { }
 
   encodeToBase64(login, password) {
-    return btoa(login + '/' + password);
+    return btoa(login + ':' + password);
   }
 
   validateCurrentUser() {

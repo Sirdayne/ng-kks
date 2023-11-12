@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApplicationService } from '../../../core/services/application.service';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-admin-form',
@@ -11,16 +12,22 @@ export class AdminFormComponent {
 
   constructor(
     private router: Router,
-    private applicationService: ApplicationService
+    private applicationService: ApplicationService,
+    private snackBar: MatSnackBar
   ) {
   }
 
   submitForm(payload) {
-    console.log(payload, ' PAYLOAD')
     this.applicationService.postApplication(payload).subscribe(res => {
-      console.log('Post APP on SUCCESS')
+      this.snackBar.open('Успешно создано', 'CLOSE', {
+        duration: 3000,
+        horizontalPosition: 'center'
+      });
     }, () => {
-      console.log('Post APP on ERROR')
+      this.snackBar.open('Возникла ошибка', 'CLOSE', {
+        duration: 3000,
+        horizontalPosition: 'center'
+      });
     })
   }
 }

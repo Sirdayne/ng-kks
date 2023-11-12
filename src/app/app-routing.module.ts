@@ -12,7 +12,7 @@ import { AdminFormComponent } from './pages/admin/admin-form/admin-form.componen
 const route: Routes = [
   {
     path: '',
-    component: MainFormComponent
+    component: LoginComponent
   },
   {
     path: 'admin',

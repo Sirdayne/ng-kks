@@ -3,22 +3,22 @@
 
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.object.id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Заявка </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.object.name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="full_name">
       <th mat-header-cell *matHeaderCellDef> ФИО </th>
-      <td mat-cell *matCellDef="let element"> {{element.full_name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.object.full_name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="description">
       <th mat-header-cell *matHeaderCellDef> Текст Заявки </th>
-      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.object.description}} </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -42,11 +42,11 @@
 
 <mat-menu #actionsMenu="matMenu" xPosition="before" yPosition="below">
   <ng-template let-item="item" matMenuContent>
+    <button mat-menu-item (click)="editForm(item)">
+      <span>Просмотр заявки</span>
+    </button>
     <button mat-menu-item (click)="downloadPDF(item.id)">
       <span>Скачать PDF</span>
-    </button>
-    <button mat-menu-item (click)="editForm(item)">
-      <span>Редактировать заявку</span>
     </button>
   </ng-template>
 </mat-menu>

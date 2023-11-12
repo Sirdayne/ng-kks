@@ -20,6 +20,14 @@ export class ApplicationService {
   }
 
   getApplications() {
-    return this.httpClient.get(`/camunda/application/all`);
+    return this.httpClient.post(`/camunda/application/all`, {});
+  }
+
+  approveApplication(id) {
+    return this.httpClient.post(`/camunda/application/${id}/approve`, {});
+  }
+
+  declineApplication(id) {
+    return this.httpClient.post(`/camunda/application/${id}/decline`, {});
   }
 }

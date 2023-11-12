@@ -2,10 +2,7 @@
   <div class="edit-form-dialog-close" (click)="closeDialog(false)">
     <mat-icon fontIcon="close"></mat-icon>
   </div>
-  <app-general-form [title]="'Редактировать заявку'"
-                    [formData]="data.item"
-                    (emitSubmitForm)="submitForm($event)"
-                    (closeDialog)="closeDialog($event)"
-  ></app-general-form>
+  <app-view-application [application]="data.application" (closeDialog)="closeDialog($event)"
+  ></app-view-application>
 </div>
 
