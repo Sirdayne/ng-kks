@@ -33,7 +33,7 @@ export class ViewApplicationComponent implements OnInit {
   declineApplication() {
     const dialogRef = this.dialog.open(RejectApplicationComponent, {
       data: {
-        id: this.application.id
+        id: this.application.task.id
       }
     });
 
