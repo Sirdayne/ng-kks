@@ -21,14 +21,7 @@ export class TableComponent {
   }
 
   fetchTableData() {
-    // this.tableService.getRecords().subscribe(res => {
-    //   console.log(res);
-    // });
-
-    this.dataSource = [{ object: {id: 1}, task: {}}];
-
     this.applicationService.getApplications().subscribe((res: any) => {
-      console.log(res.data, ' APPLICATIONS');
       this.dataSource = res && res.data ? res.data: [];
     })
   }
@@ -54,7 +47,7 @@ export class TableComponent {
 
     dialogRef.afterClosed().subscribe((value) => {
       if (value) {
-        console.log('closed re-fetch data')
+        this.fetchTableData();
       };
     });
   }
