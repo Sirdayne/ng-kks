@@ -1,16 +1,38 @@
 <div class="sidebar">
-<!--  <div class="sidebar-link" [routerLink]="'/admin'" routerLinkActive="active"-->
-<!--       [routerLinkActiveOptions]="{exact: true}">-->
-<!--    <mat-icon fontIcon="home"></mat-icon>-->
-<!--    <span class="sidebar-link__label">Главная</span>-->
-<!--  </div>-->
-  <div class="sidebar-link" [routerLink]="'/admin'" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-    <mat-icon fontIcon="description"></mat-icon>
-    <span class="sidebar-link__label">Форма</span>
+  <div class="sidebar-logo">
+    <img src="assets/logo.svg" alt="">
+    <div class="sidebar-logo__text">
+      <div class="sidebar-logo__title">KKS</div>
+      <div class="sidebar-logo__sub-title">Workspace</div>
+    </div>
+
   </div>
-  <div class="sidebar-link" [routerLink]="'/admin/table'" routerLinkActive="active">
-    <mat-icon fontIcon="download"></mat-icon>
-    <span class="sidebar-link__label">Выгрузка</span>
+  <div class="sidebar-content">
+    <div class="sidebar-title">
+      <mat-icon fontIcon="home"></mat-icon>
+      <span class="sidebar-title__label">Секции</span>
+    </div>
+    <div class="sidebar-link" [routerLink]="'/admin'" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <mat-icon fontIcon="description"></mat-icon>
+      <span class="sidebar-link__label">Форма</span>
+    </div>
+    <div class="sidebar-link" [routerLink]="'/admin/table'" routerLinkActive="active">
+      <mat-icon fontIcon="download"></mat-icon>
+      <span class="sidebar-link__label">Выгрузка</span>
+    </div>
+  </div>
+
+
+  <div class="sidebar-bottom">
+    <span class="sidebar-bottom-logo">
+      <mat-icon fontIcon="account_circle"></mat-icon>
+    </span>
+    <span class="sidebar-bottom-logout">
+      <button class="sidebar-bottom-logout__button" (click)="logout()">
+        <mat-icon fontIcon="logout"></mat-icon>
+        <span class="sidebar-bottom-logout__button__label" >Выйти</span>
+      </button>
+    </span>
   </div>
 </div>
 

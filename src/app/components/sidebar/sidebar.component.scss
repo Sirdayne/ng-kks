@@ -1,35 +1,124 @@
 .sidebar {
-  width: 200px;
+  position: relative;
+  width: 300px;
   border-right: rgb(107, 107, 107);
-  min-height: 200px;
+  background: rgb(19, 19, 19);
+  padding: 20px;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+
+  &-logo {
+    display: flex;
+    align-items: flex-start;
+    background: rgb(16, 16, 16);
+    border: 1px solid rgb(49, 49, 49);
+    padding: 10px;
+
+    img {
+      height: 32px;
+      margin-left: 10px;
+    }
+
+    &__text {
+      margin-left: 10px;
+    }
+
+    &__title {
+      color: #fff;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    &__sub-title {
+      color: rgb(75, 86, 117);
+      font-size: 12px;
+    }
+  }
+
+  &-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 30px;
+    transition: .1s ease-in;
+    border-bottom: rgb(107, 107, 107);
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin: 10px 0 0;
+    color: #fff;
+
+    &__label {
+      margin-left: 10px;
+    }
+  }
 
   &-link {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    font-size: 17px;
-    padding: 15px 30px;
+    font-size: 14px;
+    padding: 12px 30px;
     transition: .1s ease-in;
     border-bottom: rgb(107, 107, 107);
     box-sizing: border-box;
     cursor: pointer;
     border-radius: 2px;
-    margin: 10px 0 0;
-    color: rgba(21, 21, 63, 0.87);
+    margin: 10px 0 0 20px;
+    color: rgb(219, 223, 233);
 
     &__label {
-      margin-left: 10px;
+      margin-left: 20px;
     }
 
     &:hover {
-      background: rgba(23, 23, 24, 0.11);
-      color: #000000de
+      color: rgb(255, 255, 255)
     }
 
     &.active {
-      background: var(--primary-color);
+      background: rgb(30, 31, 39);
       color: #fff;
+    }
+  }
+
+  &-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    &-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(153, 161, 183);
+    }
+
+    &-logout {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(153, 161, 183);
+
+      &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0);
+        border: 1px dashed rgb(37, 47, 74);
+        font-size: 13px;
+        color: rgb(153, 161, 183);
+        padding: 10px;
+        cursor: pointer;
+
+        &__label {
+          margin-left: 5px;
+        }
+      }
     }
   }
 }
