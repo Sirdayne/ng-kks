@@ -27,7 +27,7 @@ export class ApplicationService {
     return this.httpClient.post(`/camunda/application/${id}/approve`, {});
   }
 
-  declineApplication(id) {
-    return this.httpClient.post(`/camunda/application/${id}/decline`, {});
+  declineApplication(id, comment) {
+    return this.httpClient.post(`/camunda/application/${id}/decline`, { comment });
   }
 }

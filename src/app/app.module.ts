@@ -20,6 +20,7 @@ import { DialogEditFormComponent } from './components/dialog-edit-form/dialog-ed
 import { AdminFormComponent } from './pages/admin/admin-form/admin-form.component';
 import { ViewApplicationComponent } from "./components/view-application/view-application.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { RejectApplicationComponent } from './components/reject-application/reject-application.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { FooterComponent } from "./components/footer/footer.component";
     TableComponent,
     DialogEditFormComponent,
     ViewApplicationComponent,
+    RejectApplicationComponent,
     FooterComponent
   ],
   imports: [

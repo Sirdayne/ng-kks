@@ -1,0 +1,17 @@
+<div class="reject-application">
+  <div class="reject-application__label">
+    Напишите причину
+  </div>
+  <div class="reject-application__textarea">
+    <mat-form-field>
+      <mat-label>Причина</mat-label>
+      <textarea matInput required
+                [formControl]="commentControl"></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="reject-application__buttons">
+    <button color="warn" mat-raised-button type="button" (click)="declineApplication()">Отклонить</button>
+  </div>
+</div>
+
