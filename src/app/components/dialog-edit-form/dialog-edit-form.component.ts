@@ -18,7 +18,6 @@ export class DialogEditFormComponent {
               private applicationService: ApplicationService) { }
 
   ngOnInit(): void {
-    console.log(this.data)
   }
 
   submitForm(payload) {

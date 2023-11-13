@@ -41,8 +41,6 @@ export class GeneralFormComponent implements OnInit {
   }
 
   submitForm() {
-    console.log(this.form.getRawValue(), ' FORM SUBMITTED');
-
     this.emitSubmitForm.emit(this.form.getRawValue());
 
     if (this.isEdit) {

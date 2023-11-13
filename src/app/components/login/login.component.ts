@@ -45,7 +45,6 @@ export class LoginComponent {
     this.authError = '';
 
     const token = this.authService.encodeToBase64(this.form.get('login').value, this.form.get('password').value);
-    console.log(token);
     this.tokenService.setToken(token);
     // this.authService.login(this.form.getRawValue()).pipe(
     //   finalize(() => this.loading = false)

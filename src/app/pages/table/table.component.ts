@@ -28,7 +28,6 @@ export class TableComponent {
     this.dataSource = [{ object: {id: 1}, task: {}}];
 
     this.applicationService.getApplications().subscribe((res: any) => {
-      console.log(res.data, ' APPLICATIONS');
       this.dataSource = res && res.data ? res.data: [];
     })
   }
@@ -44,8 +43,6 @@ export class TableComponent {
   }
 
   editForm(item) {
-    console.log(item);
-
     const dialogRef = this.dialog.open(DialogEditFormComponent, {
       data: {
         application: item
