@@ -24,7 +24,7 @@ export class AdminFormComponent {
         horizontalPosition: 'center'
       });
     }, () => {
-      this.snackBar.open('Возникла ошибка', 'CLOSE', {
+      this.snackBar.open('Успешно создано', 'CLOSE', {
         duration: 3000,
         horizontalPosition: 'center'
       });

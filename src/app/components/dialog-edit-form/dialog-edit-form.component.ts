@@ -20,15 +20,6 @@ export class DialogEditFormComponent {
   ngOnInit(): void {
   }
 
-  submitForm(payload) {
-    console.log(payload, ' PAYLOAD')
-    this.applicationService.editApplication(payload).subscribe(res => {
-      console.log('Edit APP on SUCCESS')
-    }, () => {
-      console.log('Edit APP on ERROR')
-    })
-  }
-
   closeDialog(value) {
     this.dialogRef.close(value);
   }
