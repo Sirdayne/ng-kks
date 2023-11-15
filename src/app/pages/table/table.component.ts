@@ -47,8 +47,12 @@ export class TableComponent {
     dialogRef.afterClosed().subscribe((value) => {
       if (value) {
         this.fetchTableData();
-      };
+      }
     });
+  }
+
+  getDescription(description) {
+    return `${description.substring(0, 60)}...`;
   }
 
   protected readonly environment = environment;
