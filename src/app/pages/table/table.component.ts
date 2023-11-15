@@ -5,6 +5,7 @@ import { ImportService } from '../../components/import.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogEditFormComponent } from '../../components/dialog-edit-form/dialog-edit-form.component';
 import { ApplicationService } from '../../core/services/application.service';
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-table',
@@ -49,4 +50,6 @@ export class TableComponent {
       };
     });
   }
+
+  protected readonly environment = environment;
 }

@@ -1,4 +1,10 @@
 <div class="view-application">
+  <div *ngIf="application && application.task && application.task.processDefinitionId">
+    <div class="view-application__processed">
+      <div class="view-application__label">Заявка отклонена</div>
+      <div class="view-application__value">{{ application.task.processDefinitionId }}</div>
+    </div>
+  </div>
   <div class="view-application__label">Название заявки</div>
   <div class="view-application__value">{{ application.object.name }}</div>
   <div class="view-application__label">ФИО</div>

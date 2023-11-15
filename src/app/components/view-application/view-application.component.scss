@@ -17,12 +17,25 @@
     margin-top: 5px;
     color: #797979;
     font-size: 15px;
-    white-space: pre;
+    white-space: pre-wrap;
   }
 
   &__buttons {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+  }
+
+  &__processed {
+    margin-top: 25px;
+    border: 1px dashed #f44336;
+    color: rgba(114, 39, 39, 0.87);
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 15px;
+
+    .view-application__label {
+      margin-top: 0;
+    }
   }
 }
