@@ -1,8 +1,13 @@
 <div class="view-application">
-  <div *ngIf="application && application.task && application.task.processDefinitionId">
+  <div *ngIf="isDeclined">
     <div class="view-application__processed">
       <div class="view-application__label">Заявка отклонена</div>
-      <div class="view-application__value">{{ application.task.processDefinitionId }}</div>
+      <div class="view-application__value">{{ application.variables.COMMENT.value }}</div>
+    </div>
+  </div>
+  <div *ngIf="isApproved">
+    <div class="view-application__processed view-application__processed_approved">
+      <div class="view-application__label">Заявка подтверждена</div>
     </div>
   </div>
   <div class="view-application__label">Название заявки</div>
@@ -11,7 +16,7 @@
   <div class="view-application__value">{{ application.object.full_name }}</div>
   <div class="view-application__label">Текст заявки</div>
   <div class="view-application__value">{{ application.object.description }}</div>
-  <div class="view-application__buttons">
+  <div *ngIf="!(isDeclined || isApproved)" class="view-application__buttons">
     <button color="primary" mat-raised-button type="button" (click)="approveApplication(application.task.id)">Утвердить</button>
     <button color="warn" mat-raised-button type="button"  (click)="declineApplication()">Отклонить</button>
   </div>

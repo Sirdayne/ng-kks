@@ -43,4 +43,17 @@ export class ViewApplicationComponent implements OnInit {
       };
     });
   }
+
+  get isDeclined() {
+    return this.application && this.application.variables &&
+            this.application.variables.APPROVE &&
+            this.application.variables.APPROVE.value === 0
+  }
+
+  get isApproved() {
+    return this.application && this.application.variables &&
+      this.application.variables.APPROVE &&
+      this.application.variables.APPROVE.value &&
+      this.application.variables.APPROVE.value === 1
+  }
 }

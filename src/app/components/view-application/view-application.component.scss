@@ -34,6 +34,11 @@
     box-sizing: border-box;
     padding: 15px;
 
+    &_approved {
+      border: 1px dashed #3678f4;
+      color: rgba(39, 69, 114, 0.87);
+    }
+
     .view-application__label {
       margin-top: 0;
     }
